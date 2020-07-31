@@ -1,7 +1,7 @@
 <%= form_with(model: book, local: true) do |form| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <h2><%= pluralize(book.errors.count, "error") %> Estos errores impidieron que se guardara el registro</h2>
 
       <ul>
       <% book.errors.full_messages.each do |message| %>
@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label "Título" %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :author %>
+    <%= form.label "Autor" %>
     <%= form.text_field :author %>
   </div>
 
   <div class="field">
-    <%= form.label :status %>
+    <%= form.label "Estado" %>
     <%= form.select :status, Book.statuses.keys %>
   </div>
 
   <div class="field">
-    <%= form.label :borrowed_at %>
+    <%= form.label "Prestado el"%>
     <%= form.datetime_select :borrowed_at %>
   </div>
 
   <div class="field">
-    <%= form.label :returned_at %>
+    <%= form.label "Devolver antes de" %>
     <%= form.datetime_select :returned_at %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Guardar" %>
   </div>
 <% end %>

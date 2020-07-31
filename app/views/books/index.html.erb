@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
+<h1>Librería</h1>
 
 <%= search_form_for @q do |f|%>
-<%= f.label :status_eq, "Status"%>
+<%= f.label :status_eq, "Estado"%>
 <%= f.select :status_eq, options_for_select(Book.statuses, @q.status_eq), {include_blank: true}%>
 <%= f.submit "Filtrar"%>
 
@@ -13,10 +13,10 @@
   <thead>
     <tr>
       <th><%= sort_link(@q, :title) %></th>
-      <th>Author</th>
-      <th>Status</th>
-      <th>Borrowed at</th>
-      <th>Returned at</th>
+      <th>Autor</th>
+      <th>Estado</th>
+      <th>Prestado el</th>
+      <th>Devolver antes del</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -39,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<%= link_to 'Hacer un nuevo registro', new_book_path %>
